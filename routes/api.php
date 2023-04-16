@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth.basic')->group(function () {
+    Route::post('/users-file', [UserController::class, 'uploadFile']);
+    Route::get('/users-file/group-by-date', [UserController::class, 'getGroupByDate']);
 });

@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "b3e3f8a9-3e2a-4fe3-84c2-6988160b62ea",
+		"name": "Laravel Excel Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20410258"
+	},
+	"item": [
+		{
+			"name": "Upload Users File",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "open sesame",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "alladin@example.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "users",
+							"type": "file",
+							"src": "/D:/project/my/laravel-excel-test/docs/test.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users-file",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users-file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Users File Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "open sesame",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "alladin@example.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "users",
+							"type": "file",
+							"src": "/D:/project/my/laravel-excel-test/docs/test.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users-file/group-by-date",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users-file",
+						"group-by-date"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
